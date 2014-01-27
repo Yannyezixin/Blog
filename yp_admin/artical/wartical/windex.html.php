@@ -1,7 +1,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/html.inc.php';?>
 <!DOCTYPE html>
-  <html lang="zh-cn">
-  <head>
+<html lang="zh-cn">
+ <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +9,27 @@
     <meta name="author" content="">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/yp_admin.css">
-        <title>文章</title>
-       <script language="javascript" type="text/javascript" src="http://localhost/js/tinymce/tinymce.min.js"></script>
-       <script language="javascript" type="text/javascript">
-        tinyMCE.init({
-          mode : "textareas" 
-        });
-        </script>
-    </head>
-    <body>
+    <title>写文章|叶子鑫</title>
+    <!--使用tinymce插件-->
+    <script language="javascript" type="text/javascript" src="http://localhost/js/tinymce/tinymce.min.js"></script>
+    <script language="javascript" type="text/javascript">
+     tinyMCE.init({
+      mode : "textareas" 
+     });
+    </script>
+ </head>
+ <body>
     <?php
-    include $_SERVER['DOCUMENT_ROOT'].'/includes/logout.inc.php'; 
-    include $_SERVER['DOCUMENT_ROOT'].'/includes/indexpagemodel.inc.php'; 
-    include $_SERVER['DOCUMENT_ROOT'].'/includes/articalform.inc.php'; ?>
-     <div class="container">
+        include $_SERVER['DOCUMENT_ROOT'].'/includes/logout.inc.php'; 
+        include $_SERVER['DOCUMENT_ROOT'].'/includes/indexpagemodel.inc.php'; 
+        include $_SERVER['DOCUMENT_ROOT'].'/includes/articalform.inc.php';
+    ?>
+    <div class="container">
      <div class="jumbotron">
       <div class="starter-template">
-    <form action="" method="post" >
-        <div>
+        <form action="" method="post" >
+         <!--显示三个select-->
+         <div>
             <select name="userid">
                 <option value="">作者</option>
                  <?php foreach($users as $user): ?>
@@ -43,7 +46,6 @@
                     echo ' selected'; ?>><?php htmlout($catagory['catagory']);?></option>
                 <?php endforeach; ?>
             </select>
-        
             <select name="tagid">
                 <option value="">所有标签</option>
                  <?php foreach($tags as $tag): ?>
@@ -52,27 +54,30 @@
                     echo ' selected'; ?>><?php htmlout($tag['tag']);?></option>
                 <?php endforeach; ?>
             </select>      
-        </div>
-        <div>
+         </div>
+         <!--显示写文章的模板-->
+         <div>
             <b>标题：</b></br>
             <input type="text" name="title" value="<?php if(isset($content['title'])) echo $content['title'] ?>">
-        </div>
-        <div>
-        <b>正文：</b>
-        </div>
-        <div>
-        <textarea row="70" cols="80" name="content">
-            <?php if(isset($content['articaltext']))echo $content['articaltext'];?></textarea>
-        </div>
-        <div><input type="hidden" name="contentid" value="<?php if(isset($_GET['id']))echo $_GET['id']; ?>" >
+         </div>
+         <div>
+           <b>正文：</b>
+         </div>
+         <div>
+             <textarea row="70" cols="80" name="content">
+                <?php if(isset($content['articaltext']))echo $content['articaltext'];?>
+             </textarea>
+         </div>
+         <div>
+            <input type="hidden" name="contentid" value="<?php if(isset($_GET['id']))echo $_GET['id']; ?>" >
             <input type="hidden" name="publish" value="publish">
             <input type="submit" value="发布">
-        </div>
-    </form>
-     </div>
+         </div>
+        </form>
        </div>
+     </div>
    </div>
    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    </body>
+   <script src="/js/bootstrap.min.js"></script>
+ </body>
 </html>

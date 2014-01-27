@@ -8,25 +8,32 @@
     <meta name="author" content="">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/index.css">
-   <style>
-    .divcss-box{padding-left: 10px;
-      padding-top: 50px; }
+    <style>
+    .divcss-box
+    {
+       padding-left: 10px;
+       padding-top: 50px;
+    }
     </style>
-    </head>
-    <body>
-       <?php include $_SERVER['DOCUMENT_ROOT'].'/indexnav.html.php'; ?>
-       <div class="container">
-       <div class=" divcss-box" >      
+    <title>推荐文章|叶子鑫</title>
+  </head>
+  <body>
+      <!--include首页的导航栏-->
+      <?php include $_SERVER['DOCUMENT_ROOT'].'/indexnav.html.php';?>
+      
+      <div class="container">
+        <div class=" divcss-box" >      
             <?php if(isset($contents)): ?>
             <?php foreach ($contents as $content): ?>
-            <p><?php echo $content['post_date']; ?>
-              <a href="http://localhost/recommend/artical?<?php echo "id=".$content['id'];?>"><?php echo $content['title'];?></a>
-             --<?php echo $content['name'];?>
-             (<?php echo $content['comment_number']; ?>/<?php echo $content['see'];?>)</p>         
-          <?php endforeach;?>
-        <?php endif;?>
-      
+              <div>
+                <?php echo $content['post_date']; ?>
+                <a href="http://localhost/recommend/artical?<?php echo "id=".$content['id'];?>">
+                  <?php echo $content['title'];?></a>--<?php echo $content['name'];?>
+                  (<?php echo $content['comment_number']; ?>/<?php echo $content['see'];?>)
+              </div>         
+            <?php endforeach;?>
+            <?php endif;?>
         </div>
       </div>
-     </body>
-     </html>
+  </body>
+</html>

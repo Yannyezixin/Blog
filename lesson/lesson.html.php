@@ -12,6 +12,7 @@
     .divcss-box{padding-left: 10px;
       padding-top: 50px; }
     </style>
+    <title>技术教程|叶子鑫</title>
     </head>
     <body>
        <?php include $_SERVER['DOCUMENT_ROOT'].'/indexnav.html.php';?>

@@ -36,5 +36,5 @@ foreach ($result as $row) {
     'post_date' => $row['post_date']);
 }
 
-include $_SERVER['DOCUMENT_ROOT'].'/getbestnew.html.php';
+include $_SERVER['DOCUMENT_ROOT'].'/includes/getbestnew.html.php';
 include $_SERVER['DOCUMENT_ROOT'].'/index.html.php';

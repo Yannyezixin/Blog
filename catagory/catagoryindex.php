@@ -8,25 +8,32 @@
     <meta name="author" content="">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/index.css">
-       <style>
-    .divcss-box{padding-left: 10px;
-      padding-top: 50px; }
+    <style>
+    .divcss-box
+    {
+      padding-left: 10px;
+      padding-top: 50px; 
+    }
     </style>
+    <title><?php echo '分类'; ?>|叶子鑫</title>
   </head>
   <body>
+    <!--首页的导航栏-->
     <?php include $_SERVER['DOCUMENT_ROOT'].'/indexnav.html.php';?>
-       <!--被阅读得最多的-->
-       <div class="container">
-       <div class=" divcss-box" >  
-        <?php if(isset($contentcatagories)): ?>
+
+    <!--被阅读得最多的-->
+    <div class="container">
+      <div class=" divcss-box" >
+        <div></div>
+            <?php if(isset($contentcatagories)): ?>
             <?php foreach ($contentcatagories as $contentcatagory): ?>
               <div><p><a href="http://localhost/recommend/artical?<?php echo "id=".$contentcatagory['id'];?>">
                 <?php echo $contentcatagory['title'];?></a>
              --<?php echo $contentcatagory['name'];?>
              (<?php echo $contentcatagory['comment_number']; ?>/<?php echo $contentcatagory['see'];?>)</p> </div>
-          <?php endforeach; ?>
-        <?php endif;?>
+            <?php endforeach; ?>
+            <?php endif;?>
        </div>
-     </div>
+    </div>
   </body>
 </html>

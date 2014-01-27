@@ -57,7 +57,7 @@ function userIsLoggedIn()
 
 function databaseContainAuthors($name,$password)
 {
-	include '../includes/db.inc.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/includes/db.inc.php';
 
 	//选择author表，并返回数值，即有用户信息时，$s > 0；
 	try
@@ -86,37 +86,3 @@ function databaseContainAuthors($name,$password)
 		return FALSE;
 	}
 }
-
-//此函数：检测该用户的对应的用户权限
-/*function userHasRole($role) 
-{
-	include 'db.inc.php';
-
-	try
-	{
-		$sql = "SELECT COUNT(*) FROM author
-			INNER JOIN authorrole ON author.id = authorid
-			INNER JOIN role ON roleid = role.id
-			WHERE name = :name AND roleid = :roleId";
-			$s = $pdo->prepare($sql);
-			$s->bindValue(':name',$_SESSION['name']);
-			$s->bindValue(':roleId',$role);
-			$s->execute();
-	}
-	catch(PDOException $e)
-	{
-		$output = 'error searching for author roles.';
-		include 'output.html.php';
-		exit();
-	}
-
-	$row = $s->fetch();
-	if($row[0] > 0)
-	{
-		return TRUE;
-	}
-	else
-	{
-		return FALSE;
-	}
-}*/

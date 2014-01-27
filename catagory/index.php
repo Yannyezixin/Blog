@@ -1,5 +1,8 @@
 <?php
+//连接数据库
 include $_SERVER['DOCUMENT_ROOT'].'/includes/db.inc.php';
+
+//选择指定的分类目录
 if(isset($_GET['id']))
 {
 	try

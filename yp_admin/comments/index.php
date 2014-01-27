@@ -1,6 +1,8 @@
 <?php
+//连接数据库
 include $_SERVER['DOCUMENT_ROOT'].'/includes/db.inc.php';
 
+//删除评论
 if(isset($_POST['action']) and $_POST['action'] == '删除')
 {
 	try
@@ -40,6 +42,8 @@ if(isset($_POST['action']) and $_POST['action'] == '删除')
 	exit();
 }
 
+
+//取出所有评论及对应的评论文章
 try
 {
 	$sql = "SELECT yp_comment.id,comment,title,contentid FROM yp_comment LEFT JOIN yp_content ON yp_content.id = contentid";

@@ -35,9 +35,9 @@ foreach ($result as $row) {
 		'post_date' => $row['post_date']);
 }
 
+//关联与文章有关的表,取出文章的最新10篇文章
 try
 {
-//关联与文章有关的表,并且取出相关的信息
 	$sql = 'SELECT  yp_content.id,see,comment_number,articaltext,title,name,catagory,tag,post_date FROM yp_content
         LEFT JOIN yp_cata_cont ON
         yp_content.id = yp_cata_cont.contentid 
@@ -71,33 +71,8 @@ foreach ($result as $row) {
 		'post_date' => $row['post_date']);
 }
 
-try
-{
-	$sql = 'SELECT id,catagory FROM yp_catagory';
-	$result = $pdo->query($sql);
-}
-catch(PDOException $e)
-{
-	$output = 'error to fetching the catagory form the database'.$e->getMessage();
-	include $_SERVER['DOCUMENT_ROOT'].'/includes/output.html.php';
-	exit();
-}
-foreach ($result as $row) {
-	$catagorys[] = array('id' => $row['id'],
-		'catagory' => $row['catagory']);
-}
-try
-{
-	$sql = 'SELECT id,tag FROM yp_tag';
-	$result = $pdo->query($sql);
-}
-catch(PDOException $e)
-{
-	$output = 'error to fetching the tag form the database'.$e->getMessage();
-	include $_SERVER['DOCUMENT_ROOT'].'/includes/output.html.php';
-	exit();
-}
-foreach ($result as $row) {
-	$tags[] = array('id' => $row['id'],
-		'tag' => $row['tag']);
-}
+//取出所有的目录
+include $_SERVER['DOCUMENT_ROOT'].'/includes/catagory.inc.php';
+
+//取出所有的标签
+include $_SERVER['DOCUMENT_ROOT'].'/includes/tag.inc.php';

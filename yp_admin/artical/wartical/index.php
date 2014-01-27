@@ -1,9 +1,10 @@
 <?php
+//连接数据库，取用目录，用户，标签
 include $_SERVER['DOCUMENT_ROOT'].'/includes/db.inc.php';
 include $_SERVER['DOCUMENT_ROOT'].'/includes/catagory.inc.php';
 include $_SERVER['DOCUMENT_ROOT'].'/includes/user.inc.php';
 include $_SERVER['DOCUMENT_ROOT'].'/includes/tag.inc.php';
-
+//当检测到publish，即文章发布
 if(isset($_POST['publish']))
 {
 //在操作不完全时提醒其重新输入
@@ -58,13 +59,8 @@ if(isset($_POST['publish']))
         include $_SERVER['DOCUMENT_ROOT'].'/includes/output.html.php';
         exit();
 	}
+	//跳回文章首页
 	header('Location:http://localhost/yp_admin/artical');
 	exit();
 }
-
-
-
-
-
-
 include $_SERVER['DOCUMENT_ROOT'].'/yp_admin/artical/wartical/windex.html.php';

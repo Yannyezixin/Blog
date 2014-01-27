@@ -1,5 +1,6 @@
+<!--通用代码--导航栏-->
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
+    <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -15,6 +16,6 @@
             <li><a href="http://localhost/yp_admin/comments/">评论</a></li>
             <li><a href="http://localhost/yp_admin/user/">用户</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+        </div>
     </div>
+</div>

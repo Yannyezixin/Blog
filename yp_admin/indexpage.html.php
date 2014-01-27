@@ -7,10 +7,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/yp_admin/css">
-    	<title>后台</title>
+    <link rel="stylesheet" href="/css/yp_admin.css">
+    <title>后台|叶子鑫</title>
     </head>
     <body>
+    <!--include登出，置顶的导航栏-->
     <?php
     include $_SERVER['DOCUMENT_ROOT'].'/includes/logout.inc.php'; 
     include $_SERVER['DOCUMENT_ROOT'].'/includes/indexpagemodel.inc.php'; ?>

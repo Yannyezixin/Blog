@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/yp_admin/css">
-  	<title>用户</title>
+  	<title>用户|叶子鑫</title>
   </head>
   <body>
   	<?php

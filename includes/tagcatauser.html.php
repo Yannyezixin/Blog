@@ -1,8 +1,7 @@
 <!--这段是对作者，分类目录，标签进行select-->
 <div class="container">
-
-      <div class="starter-template">
-<form action="" method="post" >
+ <div class="starter-template">
+  <form action="" method="post" >
         <div>
             <select name="userid">
                 <option value="">作者</option>
@@ -12,7 +11,6 @@
                     ><?php htmlout($user['name']); ?></option>
                 <?php endforeach; ?>
             </select>
-       
             <select name="catagoryid" >
                 <option value="" >所有目录</option>
                 <?php foreach($catagories as $catagory): ?>
@@ -21,7 +19,6 @@
                     echo ' selected'; ?>><?php htmlout($catagory['catagory']);?></option>
                 <?php endforeach; ?>
             </select>
-        
             <select name="tagid">
                 <option value="">所有标签</option>
                  <?php foreach($tags as $tag): ?>
@@ -33,6 +30,6 @@
             <input type="hidden" name="action" value="search" >
             <button  type="submit" class="btn btn-default navbar-btn" >选择</button>
         </div>
-</form>
-</div>
+  </form>
+ </div>
 </div>
