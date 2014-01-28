@@ -15,7 +15,7 @@ try
         LEFT JOIN yp_tag_cont ON
         yp_content.id = yp_tag_cont.contentid
         LEFT JOIN yp_tag ON
-        yp_tag_cont.tagid = yp_tag.id  ORDER BY post_date';
+        yp_tag_cont.tagid = yp_tag.id  ORDER BY post_date DESC';
   $result = $pdo->query($sql);
 }
 catch(PDOException $e)
@@ -35,6 +35,6 @@ foreach ($result as $row) {
     'tag' => $row['tag'],
     'post_date' => $row['post_date']);
 }
-
+//侧边栏的信息
 include $_SERVER['DOCUMENT_ROOT'].'/includes/getbestnew.html.php';
 include $_SERVER['DOCUMENT_ROOT'].'/index.html.php';

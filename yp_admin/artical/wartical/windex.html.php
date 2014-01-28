@@ -11,11 +11,25 @@
     <link rel="stylesheet" href="/css/yp_admin.css">
     <title>写文章|叶子鑫</title>
     <!--使用tinymce插件-->
-    <script language="javascript" type="text/javascript" src="http://localhost/js/tinymce/tinymce.min.js"></script>
+    <script language="javascript" type="text/javascript" src="http://localhost/js/tinymce/tinymce.min.js" charset="utf-8"></script>
     <script language="javascript" type="text/javascript">
-     tinyMCE.init({
-      mode : "textareas" 
-     });
+    tinymce.init({
+ selector: "textarea",
+ theme: "modern",
+ plugins: [
+ "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+ "searchreplace wordcount visualblocks visualchars code fullscreen",
+ "insertdatetime media nonbreaking save table contextmenu directionality",
+ "emoticons template paste textcolor"
+ ],
+ toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+ toolbar2: "print preview media | forecolor backcolor emoticons",
+ image_advtab: true,
+ visualblocks_default_state: true,
+ width: 1000,
+ height: 400,
+ content_css: "/static/blog/css/tinymce.css"
+});
     </script>
  </head>
  <body>

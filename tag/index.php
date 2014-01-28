@@ -37,5 +37,22 @@ if(isset($_GET['id']))
 			'tag' => $row['tag'],
 			'post_date' => $row['post_date']);
    }
+   try
+   {
+   	  $sql = 'SELECT tag FROM yp_tag WHERE id = :id';
+   	  $s = $pdo->prepare($sql);
+   	  $s->bindValue(':id',$_GET['id']);
+   	  $s->execute();
+   }
+   catch(PDOException $e)
+	{
+		$output = 'error to fetching the tag form the database'.$e->getMessage();
+		include $_SERVER['DOCUMENT_ROOT'].'/includes/output.html.php';
+		exit();
+	}
+	$tag = $s->fetch();
 }
+
+//侧边栏的信息
+include $_SERVER['DOCUMENT_ROOT'].'/includes/getbestnew.html.php';
 include $_SERVER['DOCUMENT_ROOT'].'/tag/tagindex.php';

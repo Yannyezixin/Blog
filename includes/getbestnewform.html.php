@@ -1,61 +1,56 @@
-<!--被阅读得最多的五篇文章-->
-      <div class="container">
-        <div class=" divcss-box" >  
-          <?php if(isset($contentbests)): ?>
-          <?php foreach ($contentbests as $contentbest): ?>
+     <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+            <!--阅读得最多的五篇文章-->
+            <?php if(isset($contentbests)): ?>
             <div>
-              <p>
-                 <a href="http://localhost/recommend/artical?<?php echo "id=".$contentbest['id'];?>">
-                 <?php echo $contentbest['title'];?></a>--<?php echo $contentbest['name'];?>
-                 (<?php echo $contentbest['comment_number']; ?>/<?php echo $contentbest['see'];?>)
-              </p> 
+              <div class="list-group">
+                <a href="#" class="list-group-item active"><h4>阅读得最多的五篇文章</h4></a>
+                <?php foreach ($contentbests as $contentbest): ?>
+                       <a href="http://localhost/recommend/artical?<?php echo "id=".$contentbest['id'];?>" class="list-group-item" >
+                       <?php echo $contentbest['title'];?>--<?php echo $contentbest['name'];?>
+                       (<?php echo $contentbest['see'];?>次阅读)</a>
+                <?php endforeach; ?>
+              </div>
             </div>
-          <?php endforeach; ?>
-          <?php endif;?>
-        </div>
-      </div>
-
-      <!--最新的7篇文章-->
-      <div class="container">
-        <div class=" divcss-box" >  
-          <?php if(isset($contentnews)): ?>
-          <?php foreach ($contentnews as $contentnew): ?>
+            <?php endif;?>
+            
+            <!--最新的十篇文章-->       
+            <?php if(isset($contentnews)): ?>
             <div>
-              <p>
-                <a href="http://localhost/recommend/artical?<?php echo "id=".$contentnew['id'];?>">
-                   <?php echo $contentnew['title'];?></a>--<?php echo $contentnew['name'];?>
-                (<?php echo $contentnew['comment_number']; ?>/<?php echo $contentnew['see'];?>)
-              </p> 
+              <div class="list-group">
+                <a href="#" class="list-group-item active"><h4>最新的十篇文章</h4></a>
+                <?php foreach ($contentnews as $contentnew): ?>
+                      <a href="http://localhost/recommend/artical?<?php echo "id=".$contentnew['id'];?>" class="list-group-item">
+                         <?php echo $contentnew['title'];?>--<?php echo $contentnew['name'];?>
+                      (<?php echo $contentnew['see'];?>次阅读)</a>
+                <?php endforeach; ?>
+              </div>
+              <?php endif;?>
             </div>
-          <?php endforeach; ?>
-          <?php endif;?>
-        </div>
-      </div>
+         
+            <!--所有分类-->
+            <?php if(isset($catagories)):?>
+            <div>
+              <div class="list-group">
+                <a href="#" class="list-group-item active"><h4>分类目录</h4></a>
+              <?php foreach($catagories as $catagory):?>
+                <a href="http://localhost/catagory?<?php echo 'id='.$catagory['id'];?>" class="list-group-item">
+                   <?php echo $catagory['catagory'];?></a>
+              <?php endforeach; ?>
+              </div>
+            </div>
+            <?php endif;?>
+         
+            <!--所有标签-->
+            <?php if(isset($tags)):?>
+            <div>
+              <div class="list-group">
+                <a href="#" class="list-group-item active">标签</a>
+              <?php foreach($tags as $tag):?>
+                <a href="http://localhost/tag?<?php echo 'id='.$tag['id'];?>">
+                  <span class="label label-danger"><?php echo $tag['tag'];?></span></a>
+              <?php endforeach; ?>
+              </div>
+            </div>
+            <?php endif;?>
 
-      <!--所有分类-->
-      <div class="container">
-        <div class=" divcss-box" > 
-          <?php if(isset($catagories)):?>
-          <?php foreach($catagories as $catagory):?>
-          <p>
-            <a href="http://localhost/catagory?<?php echo 'id='.$catagory['id'];?>">
-               <?php echo $catagory['catagory'];?></a>
-          </p>
-          <?php endforeach; ?>
-          <?php endif;?>
         </div>
-      </div>
-
-      <!--所有标签-->
-      <div class="container">
-        <div class=" divcss-box" > 
-          <?php if(isset($tags)):?>
-          <?php foreach($tags as $tag):?>
-          <p>
-            <a href="http://localhost/tag?<?php echo 'id='.$tag['id'];?>">
-              <?php echo $tag['tag'];?></a>
-          </p>
-          <?php endforeach; ?>
-          <?php endif;?>
-        </div>
-      </div>

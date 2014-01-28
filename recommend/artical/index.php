@@ -163,5 +163,8 @@ if(isset($_POST['comments']))
   }
 }
 
+//侧边栏的信息
+include $_SERVER['DOCUMENT_ROOT'].'/includes/getbestnew.html.php';
+
 //显示页面的所有信息
 include $_SERVER['DOCUMENT_ROOT'].'/recommend/artical/indexartical.html.php';

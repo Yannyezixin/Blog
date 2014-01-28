@@ -15,21 +15,37 @@
       padding-top: 50px; 
     }
     </style>
-    <title>标签|叶子鑫</title>
+    <title><?php if(isset($tag['tag']))echo $tag['tag']; ?>|叶子鑫</title>
   </head>
   <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'].'/indexnav.html.php';?>
-       <!--被阅读得最多的-->
-      <div class="container">
-        <div class=" divcss-box" >  
-          <?php if(isset($contenttags)): ?>
-          <?php foreach ($contenttags as $contenttag): ?>
-            <div><p><a href="http://localhost/recommend/artical?<?php echo "id=".$contenttag['id'];?>">
-                <?php echo $contenttag['title'];?></a> --<?php echo $contenttag['name'];?>
-                (<?php echo $contenttag['comment_number']; ?>/<?php echo $contenttag['see'];?>)</p> </div>
-          <?php endforeach; ?>
-          <?php endif;?>
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <?php include $_SERVER['DOCUMENT_ROOT'].'/indexnav.html.php';?>
+             <!--被阅读得最多的-->
+              <div class="row row-offcanvas row-offcanvas-right">
+
+                <div class="col-xs-12 col-sm-9">
+                <?php if(isset($contenttags)): ?>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <div>
+                      标签：<?php if(isset($tag['tag']))echo $tag['tag']; ?>
+                    </div>
+                    <?php foreach ($contenttags as $contenttag): ?>
+                      <div><p><a href="http://localhost/recommend/artical?<?php echo "id=".$contenttag['id'];?>">
+                          <?php echo $contenttag['title'];?></a> --<?php echo $contenttag['name'];?>
+                          (<?php echo $contenttag['comment_number']; ?>/<?php echo $contenttag['see'];?>)</p> </div>
+                    <?php endforeach; ?>
+                  </div>
+                </div>
+                <?php endif;?>
+                </div>
+              <!--侧边栏的html显示-->  
+              <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/getbestnewform.html.php';?>
+              </div>
         </div>
       </div>
+    </div>
   </body>
 </html>

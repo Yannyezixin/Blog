@@ -40,5 +40,22 @@ if(isset($_GET['id']))
 			'tag' => $row['tag'],
 			'post_date' => $row['post_date']);
    }
+   try
+   {
+   	  $sql = 'SELECT catagory FROM yp_catagory WHERE id = :id';
+   	  $s = $pdo->prepare($sql);
+   	  $s->bindValue(':id',$_GET['id']);
+   	  $s->execute();
+   }
+   catch(PDOException $e)
+	{
+		$output = 'error to fetching the catagory form the database'.$e->getMessage();
+		include $_SERVER['DOCUMENT_ROOT'].'/includes/output.html.php';
+		exit();
+	}
+	$catagory = $s->fetch();
 }
+
+//侧边栏的信息
+include $_SERVER['DOCUMENT_ROOT'].'/includes/getbestnew.html.php';
 include $_SERVER['DOCUMENT_ROOT'].'/catagory/catagoryindex.php';

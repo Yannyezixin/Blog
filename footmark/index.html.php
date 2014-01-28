@@ -11,6 +11,22 @@
     <title>足迹|叶子鑫</title>
     </head>
     <body>
-       <?php include $_SERVER['DOCUMENT_ROOT'].'/indexnav.html.php';?>
+      <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-body">
+            <?php include $_SERVER['DOCUMENT_ROOT'].'/indexnav.html.php';?>
+              <div class="row row-offcanvas row-offcanvas-right">
+
+                <div class="col-xs-12 col-sm-9">
+                </div>
+
+              <!--侧边栏的html显示-->  
+              <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/getbestnewform.html.php';?>
+
+           
+              </div>
+      </div>
+      </div>
+    </div>
     </body>
   </html>

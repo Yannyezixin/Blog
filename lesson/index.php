@@ -36,4 +36,7 @@ foreach ($result as $row) {
     'post_date' => $row['post_date']);
 }
 
+//侧边栏的信息
+include $_SERVER['DOCUMENT_ROOT'].'/includes/getbestnew.html.php';
+
 include $_SERVER['DOCUMENT_ROOT'].'/lesson/lesson.html.php';

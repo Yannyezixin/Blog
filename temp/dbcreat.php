@@ -8,7 +8,8 @@ try
    	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
    	title VARCHAR(50) NOT NULL,
    	articaltext TEXT NOT NULL,
-      see INT NOT NULL,
+      see INT NOT NULL DEFAULT 0,
+      comment_number INT NOT NULL DEFAULT 0,
    	post_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
    	)DEFAULT CHARACTER SET utf8 ENGINE = InnoDB;
       CREATE TABLE yp_catagory(
